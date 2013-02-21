@@ -1725,7 +1725,11 @@ static int sdhci_execute_tuning(struct mmc_host *mmc, u32 opcode)
 		if (!tuning_loop_counter && !timeout)
 			break;
 
+#ifdef CONFI_WIMAX_CMC
+		cmd.opcode = MMC_SEND_TUNING_BLOCK;
+#else
 		cmd.opcode = opcode;
+#endif
 		cmd.arg = 0;
 		cmd.flags = MMC_RSP_R1 | MMC_CMD_ADTC;
 		cmd.retries = 0;
