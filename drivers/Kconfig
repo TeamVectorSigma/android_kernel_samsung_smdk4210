@@ -159,6 +159,8 @@ source "drivers/gud/Kconfig"
 
 source "drivers/iommu/Kconfig"
 
+source "drivers/dpram/Kconfig"
+
 # FELICA
 source "drivers/felica/Kconfig"
 
